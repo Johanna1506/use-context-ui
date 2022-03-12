@@ -1,2 +1,17 @@
-$primary: #297373;
-$secondary: #DC602E;
+@use "sass:color";
+@use "sass:math";
+
+$unitBase: 1.2rem;
+$unitType: 2rem;
+$unitLine: 0.2rem;
+
+$borderRadius: $unitBase;
+
+$animEasing: ease-in;
+$animTiming: 0.25s;
+
+$colorBlack: #000000;
+$colorWhite: #FFFFFF;
+
+$colorPrimary: #297373;
+$colorSecondary: #DC602E;

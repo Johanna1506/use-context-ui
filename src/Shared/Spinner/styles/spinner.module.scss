@@ -21,7 +21,7 @@
   animation: spinnerRotate .75s linear infinite;
 
   .spinner-primary & {
-    border-color: $primary;
+    border-color: $colorPrimary;
   }
 }
 
