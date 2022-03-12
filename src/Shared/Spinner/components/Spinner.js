@@ -7,7 +7,7 @@ type Props = {
   className: string,
 };
 
-export const Spinner = (props: Props) => {
+export const Spinner = (props: Props): React$Node => {
   const { className } = props;
 
 

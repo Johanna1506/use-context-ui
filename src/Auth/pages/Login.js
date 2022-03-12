@@ -1,8 +1,9 @@
+// @flow
 import React, { useState } from 'react';
-
+import { useHistory } from "react-router-dom";
 import { loginUser, useAuthState, useAuthDispatch } from '..';
 import Button from '../../Shared/Button';
-import { LoginPayload } from '../model';
+import type { LoginPayload } from '../model';
 import styles from '../styles/login.module.css';
 
 const initialValues: LoginPayload = {
@@ -10,7 +11,8 @@ const initialValues: LoginPayload = {
 	password: ''
 };
 
-function Login(props) {
+function Login() {
+	let history = useHistory();
 	const [formValues, setFormValues] = useState(initialValues);
 
 	const dispatch = useAuthDispatch();
@@ -25,7 +27,11 @@ function Login(props) {
 	};
 
 	const isDisabled = () => {
-		return formValues.email && formValues.password;
+		let disabled = true;
+		if(formValues.email && formValues.password) {
+			disabled = false
+		}
+		return disabled;
 	};
 
 	const handleLogin = async (e: Event) => {
@@ -34,7 +40,7 @@ function Login(props) {
 		try {
 			let response = await loginUser(dispatch, formValues);
 			if (!response.user) return;
-			props.history.push('/dashboard');
+			history.push('/dashboard');
 		} catch (error) {
 			console.log(error);
 		}
@@ -73,7 +79,7 @@ function Login(props) {
 					<Button
 						label='Connexion'
 						onClick={handleLogin}
-						// disabled={isDisabled}
+						disabled={isDisabled()}
 						isLoading={loading}
 					/>
 				</form>

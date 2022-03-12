@@ -1,10 +1,10 @@
-import React from 'react';
-import Login from '../../Auth/pages';
+// @flow
+import Login from '../../Auth/pages/Login';
 import Dashboard from '../../Dashboard/pages';
 import NotFound from '../../NotFound/pages';
-import { Route } from '../model';
+import type { Route } from '../model';
 
-const routes: Route = [
+const routes: Route[] = [
 	{
 		path: '/login',
 		component: Login,

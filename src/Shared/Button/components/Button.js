@@ -1,6 +1,5 @@
 // @flow
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import Spinner from '../../Spinner';
 
 
@@ -13,7 +12,7 @@ type Props = {
   onClick: (event: Event) => void,
 };
 
-const Button = (props: Props) => {
+const Button = (props: Props): React$Node => {
   const {
     label,
     className,

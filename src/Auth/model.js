@@ -1,3 +1,4 @@
+// @flow
 export type State = {
 	user: string | null,
 	token: string| null,
@@ -6,8 +7,8 @@ export type State = {
 };
 
 export type LoginPayload = {
-	email: string | null,
-	password: string| null,
+	email: string,
+	password: string,
 };
 
 

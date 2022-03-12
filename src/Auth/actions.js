@@ -1,10 +1,11 @@
+// @flow
 import * as authType from './actionTypes';
-import { Dispatch } from '../Core/model';
-import { LoginPayload } from './model';
+import type { Dispatch } from '../Core/model';
+import type { LoginPayload } from './model';
 
 const ROOT_URL = 'https://secret-hamlet-03431.herokuapp.com';
 
-export async function loginUser(dispatch: Dispatch, loginPayload: LoginPayload) {
+export async function loginUser(dispatch: Dispatch, loginPayload: LoginPayload): Promise {
 	const requestOptions = {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },

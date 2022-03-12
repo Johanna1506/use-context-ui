@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
@@ -10,7 +11,7 @@ type Props = {
 	rest: Object
 }
 
-const AppRoutes = ({ component: Component, path, isPrivate, ...rest }: Props) => {
+const AppRoutes = ({ component: Component, path, isPrivate, ...rest }: Props): React$Node => {
 	const userDetails = useAuthState();
 	return (
 		<Route

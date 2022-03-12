@@ -1,3 +1,4 @@
+// @flow
 import React, { useReducer, useContext } from 'react';
 import { initialState, AuthReducer } from './reducer';
 

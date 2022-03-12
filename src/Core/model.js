@@ -1,3 +1,4 @@
+// @flow
 export type Dispatch = typeof Dispatch;
 
 export type Action = {
@@ -8,7 +9,7 @@ export type Action = {
 };
 
 export type Route = {
-	path: String,
-	component: React$Node,
+	path: string,
+	component: React$Element,
 	isPrivate: boolean
 };

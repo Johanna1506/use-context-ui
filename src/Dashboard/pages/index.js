@@ -1,14 +1,14 @@
+// @flow
 import React from 'react';
 import { useAuthDispatch, logout, useAuthState } from '../../Auth';
 import styles from '../styles/dashboard.module.scss';
 
-function Dashboard(props) {
+function Dashboard(): React$Node {
 	const dispatch = useAuthDispatch();
 	const userDetails = useAuthState();
 
 	const handleLogout = () => {
 		logout(dispatch);
-		props.history.push('/login');
 	};
 	return (
 		<div style={{ padding: 10 }}>

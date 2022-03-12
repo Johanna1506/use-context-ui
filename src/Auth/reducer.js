@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+// @flow
 import { State } from './model'
 import { Action } from '../Core/model'
 import * as authType from './actionTypes';
@@ -18,7 +18,7 @@ export const initialState: State = {
 	errorMessage: '',
 };
 
-export const AuthReducer = (initialState: State, action: Action) => {
+export const AuthReducer = (initialState: State, action: Action): Object => {
 	const { type, payload, error } = action;
 
 	switch (type) {
