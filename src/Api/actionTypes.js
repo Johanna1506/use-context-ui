@@ -1,0 +1,1 @@
+export const NO_ACTION = 'NO_ACTION';

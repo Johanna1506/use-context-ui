@@ -13,3 +13,7 @@ export type Route = {
 	component: React$Element,
 	isPrivate: boolean
 };
+
+export type DictionaryObject = {
+  [key: string]: any
+};

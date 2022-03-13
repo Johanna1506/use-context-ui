@@ -26,7 +26,7 @@ function Login() {
 		}))
 	};
 
-	const isDisabled = () => {
+	const isDisabled = (): Boolean => {
 		let disabled = true;
 		if(formValues.email && formValues.password) {
 			disabled = false
@@ -50,7 +50,7 @@ function Login() {
 		<div className={styles.container}>
 			<div className={{ width: 200 }}>
 				<h1>Login Page</h1>
-				{errorMessage ? <p className={styles.error}>{errorMessage}</p> : null}
+				{errorMessage && <p className={styles.error}>{errorMessage}</p>}
 				<form>
 					<div className={styles.loginForm}>
 						<div className={styles.loginFormItem}>
