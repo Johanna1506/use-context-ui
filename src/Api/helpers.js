@@ -51,6 +51,9 @@ export const requestDispatchWithAxios = (
           ...getAction(actionResponse),
           payload: data
         })
+        if(data.userId) {
+          localStorage.setItem('currentUser', JSON.stringify(data));
+        }
       }
     })
     .catch((error) => {

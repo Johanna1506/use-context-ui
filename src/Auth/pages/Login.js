@@ -39,7 +39,7 @@ function Login() {
 
 		try {
 			let response = await loginUser(dispatch, formValues);
-			// if (!response.user) return;
+			if (!response.user) return;
 			history.push('/dashboard');
 		} catch (error) {
 			console.log(error);

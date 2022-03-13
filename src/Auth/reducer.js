@@ -5,10 +5,10 @@ import * as authType from './actionTypes';
 
 
 let user = localStorage.getItem('currentUser')
-	? JSON.parse(localStorage.getItem('currentUser')).user
+	? JSON.parse(localStorage.getItem('currentUser')).userId
 	: '';
 let token = localStorage.getItem('currentUser')
-	? JSON.parse(localStorage.getItem('currentUser')).auth_token
+	? JSON.parse(localStorage.getItem('currentUser')).token
 	: '';
 
 export const initialState: State = {
