@@ -20,6 +20,7 @@ export const initialState: State = {
 
 export const AuthReducer = (initialState: State, action: Action): Object => {
 	const { type, payload, error } = action;
+	console.log(payload)
 
 	switch (type) {
 		case authType.REQUEST_LOGIN:
@@ -30,8 +31,8 @@ export const AuthReducer = (initialState: State, action: Action): Object => {
 		case authType.LOGIN_SUCCESS:
 			return {
 				...initialState,
-				user: payload.user,
-				token: payload.auth_token,
+				user: payload.userId,
+				token: payload.token,
 				loading: false,
 			};
 		case authType.LOGOUT:

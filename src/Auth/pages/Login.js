@@ -28,7 +28,7 @@ function Login() {
 
 	const isDisabled = (): Boolean => {
 		let disabled = true;
-		if(formValues.email && formValues.password) {
+		if(formValues.username && formValues.password) {
 			disabled = false
 		}
 		return disabled;
@@ -39,7 +39,7 @@ function Login() {
 
 		try {
 			let response = await loginUser(dispatch, formValues);
-			if (!response.user) return;
+			// if (!response.user) return;
 			history.push('/dashboard');
 		} catch (error) {
 			console.log(error);
@@ -48,18 +48,18 @@ function Login() {
 
 	return (
 		<div className={styles.container}>
-			<div className={{ width: 200 }}>
+			<div>
 				<h1>Login Page</h1>
 				{errorMessage && <p className={styles.error}>{errorMessage}</p>}
 				<form>
 					<div className={styles.loginForm}>
 						<div className={styles.loginFormItem}>
-							<label htmlFor='email'>Username</label>
+							<label htmlFor='username'>Username</label>
 							<input
 								type='text'
-								id='email'
-								name='email'
-								value={formValues.email}
+								id='username'
+								name='username'
+								value={formValues.username}
 								onChange={handleChange}
 								disabled={loading}
 							/>

@@ -40,10 +40,13 @@ export const requestDispatchWithAxios = (
   dispatch: Dispatch
 ) => {
   dispatch(getAction(actionRequest));
+  console.log('action', getAction(actionRequest));
   return axios(axiosParams)
     .then((response) => {
+      console.log('response in helpers api', response)
       if (typeof response === 'object') {
         const { data } = response;
+        console.log('data in helpers', data)
         dispatch({
           ...getAction(actionResponse),
           payload: data

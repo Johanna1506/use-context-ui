@@ -7,7 +7,7 @@ export type State = {
 };
 
 export type LoginPayload = {
-	email: string,
+	username: string,
 	password: string,
 };
 

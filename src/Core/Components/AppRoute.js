@@ -13,6 +13,7 @@ type Props = {
 
 const AppRoutes = ({ component: Component, path, isPrivate, ...rest }: Props): React$Node => {
 	const userDetails = useAuthState();
+	console.log(userDetails);
 	return (
 		<Route
 			path={path}

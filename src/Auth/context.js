@@ -1,9 +1,9 @@
 // @flow
-import React, { useReducer, useContext } from 'react';
+import React, { useReducer, useContext, createContext } from 'react';
 import { initialState, AuthReducer } from './reducer';
 
-const AuthStateContext = React.createContext();
-const AuthDispatchContext = React.createContext();
+const AuthStateContext = createContext();
+const AuthDispatchContext = createContext();
 
 export function useAuthState() {
 	const context = useContext(AuthStateContext);
