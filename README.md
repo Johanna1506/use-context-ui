@@ -4,5 +4,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Auth
 
-username: nero@admin.com
-password: admin123
