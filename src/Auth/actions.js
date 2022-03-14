@@ -20,25 +20,6 @@ export async function loginUser(dispatch: Dispatch, loginPayload: LoginPayload):
 		authType.LOGIN_ERROR,
 		dispatch
 	)
-
-	// try {
-	// 	dispatch({ type: authType.REQUEST_LOGIN });
-	// 	let response = await fetch(apiConstants.ROOT_URL + 'auth/login', requestOptions);
-	// 	let data = await response.json();
-
-	// 	if (data.user) {
-	// 		dispatch({ type: authType.LOGIN_SUCCESS, payload: data });
-	// 		localStorage.setItem('currentUser', JSON.stringify(data));
-	// 		return data;
-	// 	}
-
-	// 	dispatch({ type: authType.LOGIN_ERROR, error: data.errors[0] });
-	// 	console.log(data.errors[0]);
-	// 	return;
-	// } catch (error) {
-	// 	dispatch({ type: authType.LOGIN_ERROR, error: error });
-	// 	console.log(error);
-	// }
 }
 
 export async function logout(dispatch) {

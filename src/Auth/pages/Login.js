@@ -1,5 +1,5 @@
 // @flow
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { loginUser, useAuthState, useAuthDispatch } from '..';
 import Button from '../../Shared/Button';
@@ -17,6 +17,14 @@ function Login() {
 
 	const dispatch = useAuthDispatch();
 	const { loading, errorMessage } = useAuthState();
+	const userDetails = useAuthState();
+	
+	useEffect(() => {
+		console.log(userDetails)
+		if(userDetails?.token) {
+			history.push('/dashboard')
+		}
+	}, [userDetails, history])
 
 	const handleChange = (e: Event) => {
 		const { value, name } = e.target;
@@ -36,14 +44,7 @@ function Login() {
 
 	const handleLogin = async (e: Event) => {
 		e.preventDefault();
-
-		try {
-			let response = await loginUser(dispatch, formValues);
-			if (!response.user) return;
-			history.push('/dashboard');
-		} catch (error) {
-			console.log(error);
-		}
+		loginUser(dispatch, formValues);
 	};
 
 	return (
