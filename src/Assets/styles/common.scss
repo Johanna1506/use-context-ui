@@ -1,11 +1,12 @@
 @use "sass:color";
 @use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700&display=swap');
 
 $unitBase: 1.2rem;
 $unitType: 2rem;
 $unitLine: 0.2rem;
 
-$borderRadius: $unitBase;
+$borderRadius: $unitBase / 1.7;
 
 $animEasing: ease-in;
 $animTiming: 0.25s;
@@ -15,3 +16,17 @@ $colorWhite: #FFFFFF;
 
 $colorPrimary: #297373;
 $colorSecondary: #DC602E;
+
+html {
+  font-family: 'League Spartan', sans-serif;
+  color: var(--color-base);
+  line-height: 1.2;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $unitType;
+  margin: 0;
+  height: 100%;
+}

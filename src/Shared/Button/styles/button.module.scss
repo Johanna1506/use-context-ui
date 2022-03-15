@@ -1,3 +1,64 @@
+@use "sass:color";
+@use "sass:math";
+@import "../../../Assets/styles/common.scss";
+
 .button {
-  background-color: red;
+  border-radius: $borderRadius;
+  box-sizing: border-box;
+  min-width: $unitBase * 5;
+  background-color: $colorPrimary;
+  border: 0;
+  box-shadow:
+      0 $unitBase / 3 $unitBase / 2 $unitBase / -4 $colorPrimary,
+      inset 0 $unitBase / 3 $unitBase / 2 0 $colorPrimary;
+  color: $colorWhite;
+  font-size: $unitType;
+  letter-spacing: $unitLine;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: bold;
+  padding: $unitBase / 2 $unitBase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+      background-color $animEasing $animTiming,
+      box-shadow $animEasing $animTiming;
+  position: relative;
+  svg {
+      margin: math.div($unitBase, -2) $unitBase math.div($unitBase, -2) 0;
+      path {
+          fill: currentcolor;
+      }
+  }
+  &:hover {
+      background-color: lighten($colorPrimary, 10%);
+      box-shadow:
+          0 math.div($unitBase, 2) $unitBase math.div($unitBase, -2) lighten($colorPrimary, 10%);
+      transition:
+          background-color $animEasing $animTiming,
+          box-shadow $animEasing $animTiming;
+  }
+
+  &.icon {
+      min-width: inherit;
+      svg {
+          margin: 0 $unitBase / 2;
+      }
+      &.right svg {
+          margin: 0 0 0 $unitBase;
+      }
+      &.left svg {
+          margin: 0 $unitBase 0 0;
+      }
+      &-only {
+          min-width: inherit;
+          padding-left: 0;
+          padding-right: 0;
+          svg {
+              margin: 0 $unitBase / 2;
+          }
+      }
+  }
 }
