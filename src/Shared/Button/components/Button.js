@@ -1,15 +1,16 @@
 // @flow
 import React from 'react';
+import Icon from '../../Icon';
 import Spinner from '../../Spinner';
 
-import style from '../styles/button.module.scss'
+import '../styles/button.scss';
 
 type Props = {
-  children: React$Node,
-  className: string,
+  className?: string,
   disabled?: boolean,
   isLoading: boolean,
-  label: string,
+  label?: string,
+  icon?: string,
   onClick: (event: Event) => void,
 };
 
@@ -19,6 +20,7 @@ const Button = (props: Props): React$Node => {
     className,
     disabled,
     isLoading,
+    icon,
     onClick,
   } = props;
 
@@ -28,23 +30,26 @@ const Button = (props: Props): React$Node => {
 
   return (
     <button
-			className={className + style.button}
+			className={className}
 			onClick={actionOnClick}
 			disabled={disabled}
 		>
-			{label}
-			{isLoading && (
+			{isLoading ? (
 				<Spinner />
-			)}
+			) : label && (
+        label
+      )}
+      {icon && (
+        <Icon name={icon} />
+      )}
 		</button>
   );
 };
 
 Button.defaultProps = {
-  className: '',
+  className: null,
   disabled: false,
   isLoading: false,
-	label: 'Envoyer'
 };
 
 export default Button;

@@ -2,6 +2,7 @@
 import React from 'react';
 import { logout } from '../../Auth';
 import { useGlobalDispatch, useGlobalState } from '../../Context';
+import Button from '../../Shared/Button';
 import styles from '../styles/dashboard.module.scss';
 
 function Dashboard(): React$Node {
@@ -12,15 +13,15 @@ function Dashboard(): React$Node {
 		logout(dispatch);
 	};
 	return (
-		<div style={{ padding: 10 }}>
-			<div className={styles.dashboardPage}>
-				<h1>Dashboard</h1>
-				<button className={styles.logoutBtn} onClick={handleLogout}>
-					Logout
-				</button>
-			</div>
+		<section>
+			<h1>Dashboard</h1>
+			<Button
+				className='secondary'
+				label='Logout'
+				onClick={handleLogout}
+			/>
 			<p>Welcome {userDetails.user.email}</p>
-		</div>
+		</section>
 	);
 }
 

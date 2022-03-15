@@ -1,0 +1,24 @@
+@import "../../../Assets/styles/common.scss";
+
+@keyframes spinnerRotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.spinner {
+  display: block;
+  // position: absolute;
+  // right: $unitBase;
+  margin-left: $unitBase;
+  span {
+    display: block;
+    width: $unitBase * 2;
+    height: $unitBase * 2;
+    border-radius: 50%;
+    border: $unitLine solid;
+    border-right-color: transparent !important;
+    transform-origin: center;
+    animation: spinnerRotate .75s linear infinite;
+  }
+}

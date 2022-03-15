@@ -1,25 +1,15 @@
 // @flow
 import React from 'react';
 
-import style from '../styles/spinner.module.scss';
+import '../styles/spinner.scss';
 
-type Props = {
-  className: string,
-};
-
-export const Spinner = (props: Props): React$Node => {
-  const { className } = props;
-
+export const Spinner = (): React$Node => {
 
   return (
-    <div className={className + style.spinner}>
-      <span className={style.icon} />
+    <div className='spinner'>
+      <span></span>
     </div>
   );
-};
-
-Spinner.defaultProps = {
-  className: '',
 };
 
 export default Spinner;

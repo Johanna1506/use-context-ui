@@ -1,0 +1,23 @@
+@import "../../../Assets/styles/common.scss";
+
+button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $unitType;
+  border-radius: $borderRadius;
+  box-sizing: border-box;
+  padding: $unitBase $unitBase * 2;
+  min-width: $unitBase * 5;
+  background-color: $colorPrimary;
+  color: $colorWhite;
+  border: 0;
+  box-shadow:
+        0 $unitBase / 3 $unitBase / 2 $unitBase / -4 rgba($colorBase, 0.6);
+  &.secondary {
+    background-color: $colorSecondary;
+    box-shadow:
+        0 $unitBase / 3 $unitBase / 2 $unitBase / -4 rgba($colorSecondary, 0.6);
+  }
+}
