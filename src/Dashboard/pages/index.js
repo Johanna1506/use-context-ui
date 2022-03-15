@@ -1,11 +1,12 @@
 // @flow
 import React from 'react';
-import { useAuthDispatch, logout, useAuthState } from '../../Auth';
+import { logout } from '../../Auth';
+import { useGlobalDispatch, useGlobalState } from '../../Context';
 import styles from '../styles/dashboard.module.scss';
 
 function Dashboard(): React$Node {
-	const dispatch = useAuthDispatch();
-	const userDetails = useAuthState();
+	const dispatch = useGlobalDispatch();
+	const userDetails = useGlobalState();
 
 	const handleLogout = () => {
 		logout(dispatch);

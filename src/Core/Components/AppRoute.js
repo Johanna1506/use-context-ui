@@ -2,7 +2,7 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
-import { useAuthState } from '../../Auth';
+import { useGlobalState } from '../../Context';
 
 type Props = {
 	component: React$Node,
@@ -12,7 +12,7 @@ type Props = {
 }
 
 const AppRoutes = ({ component: Component, path, isPrivate, ...rest }: Props): React$Node => {
-	const userDetails = useAuthState();
+	const userDetails = useGlobalState();
 	console.log(userDetails);
 	return (
 		<Route

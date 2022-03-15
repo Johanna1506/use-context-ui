@@ -1,12 +1,13 @@
+// @flow
 import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import routes from './Core/Config/routes';
-import { AuthProvider } from './Auth/context';
+import { GlobalProvider } from './Context/context';
 import AppRoute from './Core/Components/AppRoute';
 
 function App() {
 	return (
-		<AuthProvider>
+		<GlobalProvider>
 			<Router>
 				<Switch>
 					{routes.map((route) => (
@@ -19,7 +20,7 @@ function App() {
 					))}
 				</Switch>
 			</Router>
-		</AuthProvider>
+		</GlobalProvider>
 	);
 }
 

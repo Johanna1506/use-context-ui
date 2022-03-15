@@ -1,10 +1,12 @@
 // @flow
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { loginUser, useAuthState, useAuthDispatch } from '..';
+import { loginUser } from '..';
+import { useGlobalDispatch, useGlobalState } from '../../Context';
 import Button from '../../Shared/Button';
 import type { LoginPayload } from '../model';
-import styles from '../styles/login.module.css';
+
+import styles from '../styles/login.module.scss';
 
 const initialValues: LoginPayload = {
 	username: '',
@@ -15,10 +17,10 @@ function Login() {
 	let history = useHistory();
 	const [formValues, setFormValues] = useState(initialValues);
 
-	const dispatch = useAuthDispatch();
-	const { loading, errorMessage } = useAuthState();
-	const userDetails = useAuthState();
-	
+	const dispatch = useGlobalDispatch();
+	const { loading, errorMessage } = useGlobalState();
+	const userDetails = useGlobalState();
+
 	useEffect(() => {
 		console.log(userDetails)
 		if(userDetails?.token) {

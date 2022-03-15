@@ -2,6 +2,7 @@
 import React from 'react';
 import Spinner from '../../Spinner';
 
+import style from '../styles/button.module.scss'
 
 type Props = {
   children: React$Node,
@@ -27,7 +28,7 @@ const Button = (props: Props): React$Node => {
 
   return (
     <button
-			className={className}
+			className={className + style.button}
 			onClick={actionOnClick}
 			disabled={disabled}
 		>
